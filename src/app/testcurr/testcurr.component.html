@@ -1,0 +1,30 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 text-center">
+            <br> <br>
+            <h2>Currency Converter</h2>
+            <br>
+            <input class="form-control" type="number" placeholder="Enter the currency to convert" [(ngModel)]="currencyValue" >
+            <br>
+            <h5>Select Currency Value :</h5>
+             
+            <input class="mx-3" type="radio" name="currencytype" value="doller" [(ngModel)]="currencyType"> Doller
+            <input class="mx-3" type="radio" name="currencytype" value="rupees" [(ngModel)]="currencyType"> Rupees
+            <br> <br>
+            <button (click)="currencyConverter()" class="btn btn-warning">Convert</button>
+            <br> <br>
+            <div [ngClass]="{reset : resetnum()}">
+                <h4 [ngStyle]="{display : displayShow()}">The converted Value is : 
+                    <br>
+                    <span *ngIf="currencyType=='rupees'" >&#36;</span>
+                    <span *ngIf="currencyType!='rupees'" >&#8377;</span>
+                    
+                    
+                    {{result}}</h4>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>

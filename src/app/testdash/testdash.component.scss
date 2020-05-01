@@ -1,0 +1,27 @@
+b{
+    text-align: center;
+}
+.end{
+    position: absolute;
+    animation: end 5s linear 0s infinite forwards ;
+    width: 100%;
+}
+@keyframes end{
+    0%{
+        width: 20%;
+        background-color: red;  
+    }
+    50%{
+        width: 50%;
+        background-color: yellow;
+    }
+    100%{
+        width: 100%;
+        background-color: green;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .btn{
+        padding: .27rem;
+    }
+  }

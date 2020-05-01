@@ -1,0 +1,15 @@
+<br> <br> 
+<div class="container text-center">
+    <div *ngIf=prodItem class="card" >
+        <h4>Product name: {{prodItem.name}}</h4>
+        <br>
+        <h6>Product Description: {{prodItem.description}}</h6>
+        <br>
+        <h5>Product price: {{prodItem.price}}</h5>
+    </div>
+    <div *ngIf=!prodItem class="container">
+        <h3 style="color: red;">Product does not exist</h3>
+    </div>
+    <br>
+    <button class="btn btn-info" [routerLink]="['/products/1']">Show Product 1</button>
+</div>

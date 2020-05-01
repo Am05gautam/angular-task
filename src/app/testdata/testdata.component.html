@@ -1,0 +1,35 @@
+<br> <br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 ">
+            <h3 class="text-center">Enrollement of Students</h3>
+            <br>
+            <input class="form-control" type="text" placeholder="Enter name" [(ngModel)]="studentToEnroll.name">
+            <br>
+            <input class="form-control" type="text" placeholder="Enter age" [(ngModel)]="studentToEnroll.age">
+            <br>
+            <textarea class="form-control" cols="30" rows="10" placeholder="Enter description.." [(ngModel)]="studentToEnroll.description"></textarea>
+            <br>
+            <button (click)="addStudent()" class="btn btn-warning">Enroll</button>
+        </div>
+        <div class="col-lg-6">
+            <h3 class="text-center">List of Enrolled Students</h3>
+            <br>
+            <div *ngFor="let student of students">
+                <!-- <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{student.name}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{student.age}}</h6>
+                      <p class="card-text">{{student.description}}</p>
+                      <a href="#" class="btn btn-danger">Delete</a>
+                      <a href="#" class="card-link mx-2">Another link</a>
+                    </div>
+                </div> -->
+
+                <app-student-card [data]="student" (deleteStudent)="deleteStudent($event)"></app-student-card>
+
+            </div>
+
+        </div>
+    </div>
+</div>
